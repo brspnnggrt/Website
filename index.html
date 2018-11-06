@@ -29,7 +29,7 @@
         h2 {
             font-size: 2em;
             color: #fefefe;
-            text-transform: lowercase;
+            text-transform: capitalize;
         }
 
         .wrapper {
@@ -195,6 +195,15 @@
             width: 100%;
         }
     </style>
+    <script>
+
+    function onClick(sourceElement) {
+        var frame = document.getElementById("renderingIframe");
+        frame.src = sourceElement.href;
+        return false;
+    }
+    
+    </script>
 </header>
 
 <body>
@@ -203,16 +212,16 @@
     <div class="wrapper">
         <div style="margin-bottom: 20px;">
             <span class="square individual">
-                <a class="ninth before after" href="https://engene.azurewebsites.net/">Engene</a>
+                <a class="ninth before after" onclick="return onClick(this);" href="https://engene.azurewebsites.net/">Engene</a>
             </span>
         </div>
         <div style="margin-bottom: 20px;">
             <span class="square individual">
-                <a class="ninth before after" href="https://lacepatterns.azurewebsites.net/">Lace</a>
+                <a class="ninth before after" onclick="return onClick(this);" href="https://lacepatterns.azurewebsites.net/">Lace</a>
             </span>
         </div>
     </div>
-
+    <iframe id="renderingIframe" style="border: 0px;width: 100%;height: 700px;" src=""></iframe>
 </body>
 
 </html>
